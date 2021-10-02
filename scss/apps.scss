@@ -1,0 +1,110 @@
+.apps {
+  &__inner {
+    background: linear-gradient(90deg, #A6F2F2 0%, #DDF181 100%);
+    padding: 30px 130px;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+  }
+  &__image {
+    position: absolute;
+  }
+  &__image--plane {
+    background-image: url("../images/plane.png");
+    top: 35px;
+    right: 405px;
+    width: 425px;
+    height: 173px;
+  }
+  &__image--screen-1 {
+    background-image: url("../images/screen-1.png");
+    bottom: 0;
+    right: 19%;
+    width: 288.2px;
+    height: 364px;
+    z-index: 1;
+  }
+  &__image--screen-2 {
+    background-image: url("../images/screen-2.png");
+    bottom: 0;
+    right: 9%;
+    width: 288.2px;
+    height: 472px;
+  }
+  &__image--bagpack {
+    background-image: url("../images/bagpack.png");
+    bottom: 5%;
+    right: 19%;
+    width: 288.2px;
+    height: 364px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+  }
+  &__image--logo {
+    background-image: url("../images/logo.svg");
+    bottom: 5%;
+    right: 23%;
+    width: 171px;
+    height: 45px;
+    z-index: 2;
+  }
+  &__title {
+    z-index: 2;
+    font-size: 48px;
+    line-height: 65px;
+    color: $black;
+    max-width: 619px;
+    margin-bottom: 60px;
+  }
+  &__buttons {
+    z-index: 2;
+  }
+  &__btn {
+    display: inline-block;
+    margin: 0 30px 10px 0;
+  }
+}
+
+/*--------768px--------------------------------*/
+
+@media (max-width: 768px) {
+  .apps {
+    &__inner {
+      padding-bottom: 500px;
+    }
+    &__image--plane {
+      z-index: 2;
+      top: 400px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+/*--------------------------------------------*/
+
+/*--------426px--------------------------------*/
+
+@media (max-width: 426px) {
+  .apps {
+    &__inner {
+      padding: 20px;
+      min-height: 420px;
+    }
+    &__title {
+      font-size: 30px;
+      line-height: 45px;
+      margin-bottom: 20px;
+    }
+    &__photos {
+      display: none;
+    }
+  }
+}
+
+/*--------------------------------------------*/

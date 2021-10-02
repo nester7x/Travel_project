@@ -1,0 +1,417 @@
+.header {
+  background-color: #ffffff;
+  & span {
+    width: 10%;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+  }
+  .logo:hover {
+    animation-name: logo-anim;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes logo-anim {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(3deg);
+    }
+  }
+  .menu {
+    &__list {
+      display: flex;
+      align-items: center;
+    }
+    &__item {
+      padding: 0 20px;
+    }
+    &__link {
+      transition: .2s;
+      color: $black;
+    }
+    &__link:hover {
+      color: #FF715B;
+    }
+  }
+  &__buttons {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    transition: .2s;
+  }
+  &__btn:hover {
+    color: #FF715B;
+    .header__btn-img--account {
+      transform: scale(1.1);
+    }
+  }
+  &__btn-img {
+    transition: .2s;
+  }
+  &__btn_account {
+    margin-right: 60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__btn_account:after {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 20px;
+    background-color: #F1E0DD;
+    right: -20px;
+    top: 0;
+    cursor: default;
+  }
+  &__btn-img--account {
+    margin-right: 10px;
+  }
+  &__search {
+    position: relative;
+    width: 0;
+    height: 42px;
+  }
+  &__search.active {
+    width: 300px;
+  }
+  &__input-search {
+    height: 42px;
+    width: 0;
+    padding: 0 42px 0 15px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    background: transparent;
+    transition: .4s cubic-bezier(0, 0.8, 0, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
+  &__search-cancel {
+    display: none;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 15%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 3;
+  }
+  &__search-cancel.active {
+    display: block;
+  }
+  &__input-btn {
+    border: none;
+    height: 42px;
+    width: 42px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  &__input-search.active {
+    width: 300px;
+    padding: 0 70px 0 15px;
+    z-index: 1;
+    border: 2px solid #FF715B;
+  }
+  .account {
+    z-index: 20;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: -100%;
+    padding: 50px 20px 20px;
+    background: linear-gradient(90deg, #A6F2F2 0%, #DDF181 100%);
+    width: 500px;
+    height: 300px;
+    transition: .5s;
+    box-shadow: 0 0 20px 0 #000000;
+    &.account-form {
+      transform: translateY(400%);
+    }
+    &__text {
+      text-align: center;
+      padding: 10px 0;
+      color: $black;
+    }
+    &__input {
+      width: 100%;
+      padding: 15px 25px;
+      margin-bottom: 10px;
+    }
+    &__form-btn {
+      display: block;
+      font-size: 30px;
+      background-color: #ffffff;
+      margin: 0 auto;
+      padding: 5px 10px;
+      transition: .2s;
+      border-radius: 2px;
+    }
+    &__form-btn:hover {
+      background-color: #9CD9EC;
+    }
+    &__cancel {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 3%;
+      top: 10%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+    &__reload {
+      position: absolute;
+      left: 3%;
+      top: 10%;
+    }
+  }
+}
+
+/*--------1024px--------------------------------*/
+
+@media (max-width: 1024px) {
+  .header {
+    &__buttons {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    &__btn_account {
+      margin-bottom: 10px;
+    }
+    &__btn_account:after {
+      display: none;
+    }
+    &__input-search {
+      right: 2px;
+    }
+  }
+}
+
+/*--------------------------------------------------*/
+
+/*--------768px--------------------------------*/
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 120px;
+    &__inner {
+      padding: 30px 0;
+    }
+    &__link:hover {
+      color: $default;
+    }
+    &__buttons {
+      margin-left: 10px;
+      align-items: flex-end;
+      top: 60%;
+      right: 1%;
+      transform: translate(0%, -50%);
+    }
+    &__btn_account {
+      margin-right: 0;
+    }
+    &__input-btn {
+      height: 35px;
+      width: 35px;
+    }
+    &__input-search {
+      height: 35px;
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &__search-cancel {
+      top: 44%;
+      right: 14%;
+    }
+    .menu {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      z-index: 2;
+      background-color: #FFFFFF;
+      max-height: 0;
+      overflow: hidden;
+      transition: .3s;
+      &.show {
+        max-height: 100vh;
+        width: 100%;
+      }
+      &__list {
+        flex-direction: column;
+      }
+      &__item {
+        padding: 10px 0;
+      }
+    }
+    .menu-btn {
+      position: relative;
+      margin-bottom: 10px;
+      width: 30px;
+      height: 20px;
+    }
+    .menu-btn span {
+      top: 9px;
+    }
+    .menu-btn:before,
+    .menu-btn span,
+    .menu-btn:after {
+      position: absolute;
+      content: '';
+      background-color: #000000;
+      width: 100%;
+      height: 2px;
+      right: 0;
+      transition: .3s;
+    }
+    .menu-btn:before {
+      top: 0;
+    }
+    .menu-btn:after {
+      bottom: 0;
+    }
+    .menu-btn.show span {
+      transform: scale(0);
+    }
+    .menu-btn.show:before {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+    .menu-btn.show:after {
+      transform: rotate(-45deg);
+      bottom: 9px;
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------426px--------------------------------*/
+
+@media (max-width: 426px) {
+  .logo__img {
+    max-width: 150px;
+  }
+  .header {
+    min-height: 135px;
+    &__inner {
+      padding-bottom: 10px;
+    }
+    &__buttons {
+      top: 100%;
+      right: 2%;
+      transform: translate(0%, -50%);
+    }
+    .search-center {
+      position: absolute;
+      left: 10px;
+      bottom: -35px;
+    }
+    .menu.show {
+      margin-top: 35px;
+    }
+    .account {
+      padding: 20px 10px 10px;
+      width: 300px;
+      height: 270px;
+      &.account-form {
+        transform: translateY(350%);
+      }
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------376px--------------------------------*/
+
+@media (max-width: 376px) {
+  .header {
+    .account.account-form {
+      transform: translateY(320%);
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------320px--------------------------------*/
+
+@media (max-width: 320px) {
+  .header {
+    &__input-search {
+      width: 240px;
+    }
+    .account.account-form {
+      transform: translateY(265%);
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------768px--------------------------------*/
+
+@media (max-height: 768px) and (orientation: landscape) {
+  .header {
+    .account.account-form {
+      transform: translateY(340%);
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------415px--------------------------------*/
+
+@media (max-height: 415px) and (orientation: landscape) {
+  .header {
+    .account.account-form {
+      transform: translateY(160%);
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------376px--------------------------------*/
+
+@media (max-height: 376px) and (orientation: landscape) {
+  .header {
+    .account.account-form {
+      transform: translateY(140%);
+    }
+  }
+}
+
+/*-------------------------------------*/
+
+/*--------320px--------------------------------*/
+
+@media (max-height: 320px) and (orientation: landscape) {
+  .header {
+    .account.account-form {
+      transform: translateY(110%);
+    }
+  }
+}
+
+/*-------------------------------------*/
