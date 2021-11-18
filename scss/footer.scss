@@ -27,14 +27,14 @@
   &__mail,
   &__site {
     display: inline-block;
-    margin: 0 0 15px 40px;
+    margin: 0 0 15px 0;
     position: relative;
     transition: .3s;
   }
   &__number:hover,
   &__mail:hover,
   &__site:hover {
-    color: #FF715B;
+    color: #65CE54;
   }
   &__number:before,
   &__mail:before,
@@ -46,15 +46,6 @@
     height: 23px;
     left: -38px;
     top: 0;
-  }
-  &__number:before {
-    background-image: url("../images/phone.svg");
-  }
-  &__mail:before {
-    background-image: url("../images/mail.svg");
-  }
-  &__site:before {
-    background-image: url("../images/map.svg");
   }
   &__nav {
     display: flex;
@@ -91,7 +82,7 @@
     transition: .3s;
   }
   &__link:hover {
-    color: #FF715B;
+    color: #65CE54;
   }
   &__form-title {
     margin-left: 0;
@@ -132,7 +123,7 @@
     padding: 30px 10px;
   }
   &__copyright-name:hover {
-    color: #FF715B;
+    color: #65CE54;
   }
 }
 

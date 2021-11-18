@@ -1,6 +1,6 @@
 .apps {
   &__inner {
-    background: linear-gradient(90deg, #A6F2F2 0%, #DDF181 100%);
+    background: linear-gradient(90deg, #FF715B 0%, #65CE54 100%);
     padding: 30px 130px;
     min-height: 550px;
     display: flex;
@@ -66,6 +66,10 @@
   &__btn {
     display: inline-block;
     margin: 0 30px 10px 0;
+  }
+  svg {
+    display: flex;
+    align-items: flex-end;
   }
 }
 
